@@ -27,3 +27,5 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./site
+          user_name: 'Dasha2101'
+          user_email: 'girl.is.anime20@gmail.com'
