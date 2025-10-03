@@ -1,0 +1,23 @@
+{
+  "name": "mkdocs-theme-build",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build:css": "postcss theme/assets/src/styles.css -o theme/assets/dist/styles.min.css --env production",
+    "build:js": "terser theme/assets/src/script.js -c -m -o theme/assets/dist/script.min.js || true",
+    "build:assets": "npm run build:css && npm run build:js",
+    "validate:html": "npx html-validator --local --file=site/index.html --verbose || true",
+    "minify:html": "minify -o site-min/ site || true"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.0.0",
+    "cssnano": "^5.0.0",
+    "postcss": "^8.0.0",
+    "postcss-cli": "^9.0.0",
+    "terser": "^5.0.0",
+    "html-minifier-terser": "^7.0.0",
+    "minify": "^9.0.0",
+    "html-validator-cli": "^1.0.0",
+    "npx": "^10.2.2"
+  }
+}

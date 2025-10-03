@@ -1,1 +1,13 @@
-site_name: My Docs
+site_name: Auto generated docs
+site_author: Дарья Шильникова
+site_description: Лабораторные работы по MkDocs
+
+theme:
+  name: null
+  custom_dir: theme
+
+nav:
+  - Главная: index.md
+  - Отчёты:
+      - "Отчёт 2.1": report2-1.md
+      - "Отчёт 2.2": report2-2.md

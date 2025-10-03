@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>{{ page.title }} | {{ config.site_name }}</title>
+  <meta name="description" content="{{ config.site_description }}">
+  <meta name="author" content="{{ config.site_author }}">
+  <link rel="icon" type="image/png" href="{{ base_url }}/assets/img/fav.png">
+  <link rel="stylesheet" href="{{ base_url }}/assets/dist/styles.min.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-inner">
+      <p>This site was generated with <strong>MkDocs</strong> by
+        <a href="https://github.com/Dasha2101" target="_blank">dasha2101</a>
+      </p>
+    </div>
+  </header>
+
+  <!-- Main content area: sidebar + content -->
+  <main class="site-main">
+    <div class="main-container">
+    <!-- Sidebar navigation -->
+    <aside class="site-nav">
+      <div class="nav-block sticky">
+        <a href="{{ '/' | url }}" class="nav-item">Главная</a>
+        <div class="nav-item-group">
+          <span>Отчёты</span>
+          {% for item in nav %}
+            {% if item.children %}
+              <ul>
+                {% for child in item.children %}
+                  <li><a href="{{ child.url | url }}">{{ child.title }}</a></li>
+                {% endfor %}
+              </ul>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+    </aside>
+
+      <!-- Content area -->
+      <section class="site-content">
+        {{ page.content }}
+      </section>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <p>© 2025 {{ config.site_author }}. Все права защищены.</p>
+  </footer>
+</body>
+</html>

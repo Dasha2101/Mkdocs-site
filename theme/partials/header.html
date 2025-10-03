@@ -1,0 +1,25 @@
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="{{ '/' | url }}" aria-label="{{ config.site_name }}">{{ config.site_name }}</a>
+    <nav class="site-nav">
+      {% for item in nav %}
+        {% if item.children %}
+          <div class="dropdown">
+            <span>{{ item.title }}</span>
+            <ul>
+              {% for child in item.children %}
+                <li><a href="{{ child.url | url }}">{{ child.title }}</a></li>
+              {% endfor %}
+            </ul>
+          </div>
+        {% else %}
+          <a href="{{ item.url | url }}">{{ item.title }}</a>
+        {% endif %}
+      {% endfor %}
+    </nav>
+    <p class="header-info">
+      This site was generated with <strong>MkDocs</strong> by 
+      <a href="https://github.com/Dasha2101" target="_blank">dasha2101</a>
+    </p>
+  </div>
+</header>

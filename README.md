@@ -35,3 +35,23 @@
 * Helios или Яндекс.Облако
 * Netlify / Vercel
 * Собственный сервер
+
+## Задание 2.2
+# Мой кастомный MkDocs-сайт
+
+## Описание
+Создана кастомная тема MkDocs с собственными header, footer и стилизованной главной страницей. Сборка фронтенда выполняется через PostCSS и минификатор JS; сайт собирается с помощью `mkdocs` и деплоится на GitHub Pages через GitHub Actions.
+
+## Как устроено
+- `theme/` — кастомная тема (Jinja2 шаблоны + assets).
+- `docs/` — содержимое сайта в Markdown.
+- `.github/workflows/deploy.yml` — workflow для сборки и деплоя в GitHub Pages.
+- `package.json` + `postcss.config.js` — сборка CSS/JS (PostCSS + terser).
+- `mkdocs.yml` — конфигурация сайта (metadata: title, description, author).
+
+## Команды
+npm ci
+npm run build:assets
+
+pip install mkdocs
+mkdocs build

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>{{ page.title }} | {{ config.site_name }}</title>
+  <meta name="description" content="{{ config.site_description }}">
+  <link rel="stylesheet" href="{{ base_url }}/assets/dist/styles.min.css">
+</head>
+<body>
+  {% include "header.html" %}
+
+  <main class="site-main">
+    <nav class="site-nav">
+      {% for item in nav %}
+        {% if item.children %}
+          <div class="dropdown">
+            <span>{{ item.title }}</span>
+            <ul>
+              {% for child in item.children %}
+                <li><a href="{{ child.url | url }}">{{ child.title }}</a></li>
+              {% endfor %}
+            </ul>
+          </div>
+        {% else %}
+          <a href="{{ item.url | url }}">{{ item.title }}</a>
+        {% endif %}
+      {% endfor %}
+    </nav>
+
+    <div class="site-content">
+      {{ page.content }}
+    </div>
+  </main>
+
+  {% include "footer.html" %}
+</body>
+</html>

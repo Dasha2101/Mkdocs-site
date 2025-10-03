@@ -1,4 +1,4 @@
-name: Deploy MkDocs to GitHub Pages
+name: Build & Deploy MkDocs Site
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  deploy:
+  build-deploy:
     runs-on: ubuntu-latest
 
     steps:
@@ -15,18 +15,30 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.x'
+          python-version: 3.11
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
 
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install mkdocs mkdocs-material
+          pip install mkdocs
+          npm install postcss postcss-cli autoprefixer cssnano html-validator-cli
+
+      - name: Build CSS
+        run: npx postcss theme/assets/src/styles.css -o theme/assets/dist/styles.min.css
+
+      - name: Build MkDocs site
+        run: mkdocs build
+
+      - name: Validate HTML
+        run: npx html-validator-cli --directory site --verbose || true
 
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+        uses: peaceiris/actions-gh-pages@v4
         with:
-          github_token: ${{ secrets.PAT_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./site
-          user_name: 'Dasha2101'
-          user_email: 'girl.is.anime20@gmail.com'
-          force_orphan: true
