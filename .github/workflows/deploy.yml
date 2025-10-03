@@ -36,8 +36,9 @@ jobs:
 
       - name: Minify HTML
         run: |
-          npx html-minifier-terser site/**/*.html --collapse-whitespace --remove-comments --minify-css true --minify-js true --output-dir site-min
-          mv site-min/* site/
+          npx html-minifier-terser --input-dir site --output-dir site-min --collapse-whitespace --remove-comments --minify-css true --minify-js true
+          rm -rf site
+          mv site-min site
 
       - name: Validate HTML
         run: npx html-validator-cli --directory site --verbose || true
