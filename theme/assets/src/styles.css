@@ -2,7 +2,7 @@ body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
   padding: 0;
-  font-size: 35px;
+  font-size: 15px;
   line-height: 1.7;
   min-height: 100vh;
   display: flex;
@@ -51,7 +51,7 @@ body {
 
 
 .site-nav {
-  flex: 0 0 300px; /* чуть шире для блоков */
+  flex: 0 0 300px;
   padding: 20px;
 }
 
@@ -63,7 +63,7 @@ body {
 
 .sticky {
   position: sticky;
-  top: 20px; /* отступ сверху */
+  top: 20px;
 }
 
 
@@ -72,7 +72,7 @@ body {
   background: linear-gradient(90deg, #ffb6c1, #dda0dd);
   color: #fff;
   font-weight: 700;
-  font-size: 1.4em; /* увеличенный размер текста */
+  font-size: 1.4em;
   padding: 20px;
   border-radius: 15px;
   text-align: center;
@@ -85,7 +85,6 @@ body {
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
-/* Подблок отчётов */
 .nav-item-group span {
   font-weight: 700;
   font-size: 1.2em;
@@ -115,7 +114,7 @@ body {
 
 
 .site-nav a, .dropdown span {
-  background: #ffebf7; /* нежно-розовый фон */
+  background: #ffebf7;
   color: #4b0082;
   text-decoration: none;
   padding: 8px 15px;
@@ -127,7 +126,7 @@ body {
 
 
 .site-nav a:hover, .dropdown:hover span {
-  background: #dda0dd; /* фиолетовый при наведении */
+  background: #dda0dd;
   color: #fff;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
@@ -164,7 +163,6 @@ body {
   background-color: #dda0dd33;
 }
 
-/* Контент */
 
 .site-content {
   flex: 1;
@@ -176,20 +174,18 @@ body {
   color: #4b0082;
 }
 
-/* Заголовки */
 .site-content h1,
 .site-content h2,
 .site-content h3 {
   color: #800080;
 }
 
-/* Параграфы */
 .site-content p {
   line-height: 1.8;
   color: #4b0082;
 }
 
-/* Footer */
+
 .site-footer {
   background: #dda0dd;
   color: #fff;
@@ -199,7 +195,7 @@ body {
   border-top: 3px solid #ffb6c1;
   border-radius: 0 0 10px 10px;
   box-shadow: 0 -2px 8px rgba(0,0,0,0.1);
-  margin-top: auto; /* отправляет футер вниз */
+  margin-top: auto;
 }
 
 .site-footer p {

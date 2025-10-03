@@ -9,7 +9,6 @@
   <link rel="stylesheet" href="{{ base_url }}/assets/dist/styles.min.css">
 </head>
 <body>
-  <!-- Header -->
   <header class="site-header">
     <div class="header-inner">
       <p>This site was generated with <strong>MkDocs</strong> by
@@ -18,13 +17,11 @@
     </div>
   </header>
 
-  <!-- Main content area: sidebar + content -->
   <main class="site-main">
     <div class="main-container">
-    <!-- Sidebar navigation -->
     <aside class="site-nav">
       <div class="nav-block sticky">
-        <a href="{{ '/' | url }}" class="nav-item">Главная</a>
+        <a href="{{ 'index.md' | url }}" class="nav-item">Главная</a>
         <div class="nav-item-group">
           <span>Отчёты</span>
           {% for item in nav %}
@@ -39,15 +36,12 @@
         </div>
       </div>
     </aside>
-
-      <!-- Content area -->
       <section class="site-content">
         {{ page.content }}
       </section>
     </div>
   </main>
 
-  <!-- Footer -->
   <footer class="site-footer">
     <p>© 2025 {{ config.site_author }}. Все права защищены.</p>
   </footer>
