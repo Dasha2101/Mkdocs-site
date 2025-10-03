@@ -1,6 +1,7 @@
 site_name: Auto generated docs
 site_author: Дарья Шильникова
 site_description: Лабораторные работы по MkDocs
+site_url: https://Dasha2101.github.io/Mkdocs-site/
 
 theme:
   name: null
